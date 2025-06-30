@@ -37,13 +37,15 @@ const Auth = () => {
 
                         </div>
                         <div className="hidden lg:flex md:w-5/8 justify-center">
-                            <div className="flex flex-col w-full justify-center gap-y-8 text-center p-2">
+                            <div className="flex flex-col w-full justify-center text-center gap-y-8 p-4">
+
                                 <p className="text-2xl">Bem Vindo!</p>
                                 <p>Este sistema utiliza inteligência artificial para auxiliar na análise de imagens de pele, com foco em possíveis sinais de câncer. </p>
-                                <div className="flex items-center justify-center">
-                                    <p><strong>Atenção:</strong> os resultados apresentados não substituem uma avaliação médica profissional. <strong>Este projeto é experimental.</strong></p>
+                                <div className="flex justify-center">
                                     <img src="./undraw_science.svg" alt="Cientista" width={150} />
                                 </div>
+                                <p><strong>Atenção:</strong> os resultados apresentados não substituem uma avaliação médica profissional. <strong>Este projeto é experimental.</strong></p>
+
                             </div>
                         </div>
                     </div>
