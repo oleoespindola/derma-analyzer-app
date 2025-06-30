@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/common/button";
 import InputText from "../../components/common/inputText";
-import { useNavigate } from "react-router-dom";
+
 import api from "../../services/api";
 
 interface UserResponse {
@@ -12,6 +13,8 @@ interface UserResponse {
 }
 
 const SingIn = () => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState<string>('');
     const [password , setPassword] = useState<string>('');
@@ -30,8 +33,8 @@ const SingIn = () => {
             localStorage.setItem('name', response.data.name);
             localStorage.setItem('token', response.data.token);
 
-            const navigate = useNavigate();
             navigate('/app')
+
         } catch (error: any) {
             alert(error.response.data.detail);
         }
