@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SingIn from "./singIn";
-import SingUp from "./singUp";
+import SingIn from "./singin";
+import SingUp from "./singup";
 import Link from "../../components/common/link";
 
 
