@@ -9,7 +9,7 @@ import api from "../../services/api";
 interface UserResponse {
     sub: string;
     name: string;
-    token: string;
+    access_token: string;
 }
 
 const SingUp = () => {
@@ -30,10 +30,11 @@ const SingUp = () => {
 
             localStorage.setItem('sub', response.data.sub);
             localStorage.setItem('name', response.data.name);
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.data.access_token);
 
             const navigate = useNavigate();
             navigate('/app')
+            
         } catch (error: any) {
             alert(error.response.data.detail);
         }

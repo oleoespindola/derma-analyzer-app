@@ -12,7 +12,7 @@ const Button: React.FC<Props> = ({ loading, text, onClick }) => {
             <button className="bg-cyan-600 
             hover:bg-linear-to-bl hover:from-cyan-600 hover:to-sky-600 
             shadow-lg rounded-md cursor-pointer
-            pt-2 pb-2
+            p-2
             flex justify-center"
             onClick={onClick}>
                 {loading? 

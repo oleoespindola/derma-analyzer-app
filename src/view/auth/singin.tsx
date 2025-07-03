@@ -9,7 +9,7 @@ import api from "../../services/api";
 interface UserResponse {
     sub: string;
     name: string;
-    token: string;
+    access_token: string;
 }
 
 const SingIn = () => {
@@ -29,9 +29,10 @@ const SingIn = () => {
                 password: password
             })
 
+            console.log(response.data)
             localStorage.setItem('sub', response.data.sub);
             localStorage.setItem('name', response.data.name);
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.data.access_token);
 
             navigate('/app')
 
