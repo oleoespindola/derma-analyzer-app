@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+# Derma Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Derma Analyzer é um sistema open source de **análise de imagens de pele usando inteligência artificial.**
+Ele detecta possíveis lesões, prevê riscos e gera um histórico de análises para ajudar profissionais da saúde, pesquisadores ou qualquer pessoa interessada em monitorar a pele de forma prática e inteligente.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📷 Detecção de lesões: envia imagens de pele para identificar sinais suspeitos.
 
-## Expanding the ESLint configuration
+⚠️ Previsão de risco: estima a probabilidade de uma lesão ser de risco.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🗂️ Histórico pessoal: salva análises anteriores para acompanhamento.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🔐 Autenticação: controle de acesso para proteger dados sensíveis.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+🚀 API pública: rota /predict disponível para testes.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tecnologias utilizadas
+
+### Frontend
+
+- ReactJS;
+- TypeScript;
+- Tailwind CSS;
+- Vite;
+- Axios;
+
+### Backend
+
+- O backend está [neste repositório](https://github.com/oleoespindola/derma-analyzer-api).
+- Teste a API rodando [aqui](https://oleoespindola-derma-analyzer-api.hf.space).
+  - A rota `/predict` é pública e pode ser utilizada para testes.
+
+## Arquitetura
+
+``` md
+src/
+ ├─ components/   # Componentes de interface (genéricos e específicos)
+ ├─ guards/       # Funções de proteção de rotas (auth)
+ ├─ services/     # Configuração de chamadas à API
+ ├─ view/         # Páginas principais da aplicação
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🤝  Contribuição
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Quer contribuir? Bora!
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Faça um fork
+2. Crie uma branch: git checkout -b feature/sua-feature
+3. Faça o commit: git commit -m 'feat: minha contribuição'
+4. Envie o pull request
+
+## Licença
+
+Este projeto é licenciado sob a licença MIT.
