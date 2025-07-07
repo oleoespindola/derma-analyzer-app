@@ -96,7 +96,7 @@ const History = () => {
     useEffect(() => {
         getHistory();
 
-    }, [history])
+    }, [])
 
     return (
         <>

@@ -9,12 +9,12 @@ interface Props {
 const Prediction: React.FC<Props> = ({ created_at, image_predict, image_url }) => {
 
     const prediction_message = () => {
-        if (image_predict <= 0.2) {
-            return "Alta compatibilidade com lesões de baixo risco."
-        } else if (image_predict <= 0.8) {
-            return "Pouca commpatibilidade com imagens de lesões na pele."
+        if (image_predict <= 0.3) {
+            return "Compatível com lesões de baixo risco (benignas)."
+        } else if (image_predict <= 0.7) {
+            return "Compatibilidade incerta. Não há sinais claros de lesão benigna ou maligna."
         } else {
-            return "Alta compatibilidade com imagens de risco."
+            return "Compatível com lesões de alto risco (potencialmente malignas). Procure um especialista."
         }
     }
 
