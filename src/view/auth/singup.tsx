@@ -14,6 +14,8 @@ interface UserResponse {
 
 const SingUp = () => {
 
+    const navigate = useNavigate();
+
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState('');
@@ -32,7 +34,6 @@ const SingUp = () => {
             localStorage.setItem('name', response.data.name);
             localStorage.setItem('token', response.data.access_token);
 
-            const navigate = useNavigate();
             navigate('/app')
             
         } catch (error: any) {

@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Cropper, { type Area } from "react-easy-crop";
 
 import InputImg from "../../components/history/inputImg";
@@ -6,7 +8,6 @@ import Prediction from "../../components/history/prediction";
 import Button from "../../components/common/button";
 import Link from "../../components/common/link";
 import api from "../../services/api";
-import { useNavigate } from "react-router-dom";
 import cropedImage from "../../services/history/cropedImg";
 
 interface HistoryItem {
@@ -43,12 +44,15 @@ const History = () => {
         } catch (error: any) {
 
             if (error.response.status === 401) { // Token has expired
+                alert(error.response.data.detail);
                 localStorage.clear();
                 navigate('/')
 
             } else { // Unknown errors
 
                 alert(error.response.data.detail);
+                localStorage.clear();
+                navigate('/')
 
             }
         }
