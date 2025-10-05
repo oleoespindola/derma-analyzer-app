@@ -9,25 +9,26 @@ interface Props {
 const Prediction: React.FC<Props> = ({ created_at, image_predict, image_url }) => {
 
     const prediction_message = () => {
-        if (image_predict <= 0.3) {
-            return "Compatível com lesões de baixo risco (benignas)."
+        if (image_predict < 0.5) {
+            return "Compatível com lesões de baixo risco"
         } else if (image_predict <= 0.7) {
-            return "Compatibilidade incerta. Não há sinais claros de lesão benigna ou maligna."
+            return "Compatível com lesões de alto risco"
         } else {
-            return "Compatível com lesões de alto risco (potencialmente malignas). Procure um especialista."
+            return "⚠️ Compatível com lesões de alto risco • POTENCIALMENTE MALIGNO"
         }
     }
 
     return (
         <>
             <div className="flex flex-col w-full">
-                <div className="flex justify-end w-full">
-                    <div className="bg-neutral-600 rounded-lg p-3">
+                <div className="flex justify-end w-full bg-neutral-200 rounded-t-lg">
+                    <div className="p-3">
                         <img src={image_url} width={120} />
                     </div>
                 </div>
-                <div className="flex flex-col w-full gap-y-1">
-                    <div className="text-[10px]">{created_at} • Previsão: {String(Number(image_predict * 100).toFixed(2) + "%")}</div>
+                <div className="flex flex-col w-full gap-y-1 bg-neutral-300 p-5 mb-5 rounded-b-lg">
+                    <div className="text-[10px]">{created_at}</div>
+                    <div className="text-[15px]">Previsão: {String(Number(image_predict * 100).toFixed(2) + "%")}</div>
                     <div>{prediction_message()}</div>
                 </div>
             </div>

@@ -10,10 +10,11 @@ const Button: React.FC<Props> = ({ loading, text, onClick }) => {
     return (
         <>
             <button className="bg-cyan-600 
-            hover:bg-linear-to-bl hover:from-cyan-600 hover:to-sky-600 
+            hover:bg-linear-to-bl hover:from-cyan-600 hover:to-sky-600
             shadow-lg rounded-md cursor-pointer
             p-2
-            flex justify-center"
+            flex justify-center
+            text-white"
             onClick={onClick}>
                 {loading? 
                 <div className="animate-spin">

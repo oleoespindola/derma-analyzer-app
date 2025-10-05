@@ -15,11 +15,11 @@ const Auth = () => {
 
     return (
         <>
-            <div className="flex w-full h-full justify-center bg-neutral-800">
+            <div className="flex w-full h-full justify-center bg-neutral-100">
                 <div className="flex flex-col w-full h-full justify-center items-center">
 
-                    <div className="flex w-10/12 lg:w-8/12 justify-center bg-neutral-900 rounded-lg">
-                        <div className="flex flex-col shadow-lg p-5 items-center gap-y-5 w-full md:w-3/8 ">
+                    <div className="flex w-10/12 lg:w-8/12 justify-center bg-neutral-300 rounded-lg">
+                        <div className="flex flex-col border-r border-neutral-200 p-5 items-center gap-y-5 w-full md:w-3/8 ">
 
                             <div className="flex gap-x-2">
                                 <img src="./app-ico.svg" alt="Logo da Página" width={25} />
@@ -32,7 +32,6 @@ const Auth = () => {
 
                             <div className="flex gap-x-2">
                                 <Link onClick={toggleForm} text={singIn ? 'Cadastre-se' : 'Login'} />
-                                {singIn && <Link text="Esquceu a senha?" />}
                             </div>
 
                         </div>

@@ -116,8 +116,10 @@ const History = () => {
                         <InputImg onChange={handleFileChange} />
                     </div>
 
-                    {imgSrc && <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/25">
-                        <div className="inset-0 flex flex-col gap-y-3 justify-center p-3 rounded-lg bg-neutral-900">
+                    {imgSrc && <div className="fixed inset-0 z-50 flex items-center justify-center ">
+                        <div className="inset-0 flex flex-col gap-y-3 justify-center p-3 rounded-lg
+                            bg-linear-to-bl from-cyan-600 to-sky-600 
+                        ">
 
                             <div className="relative size-[300px] lg:w-md aspect-square">
                                 <Cropper 

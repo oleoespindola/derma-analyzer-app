@@ -9,7 +9,7 @@ interface Props {
 const Link: React.FC<Props> = ({ text, href, onClick }) => {
     return (
         <>
-            <a className="cursor-pointer text-cyan-100 hover:text-cyan-400 text-sm"
+            <a className="cursor-pointer text-sky-900 hover:text-sky-700 text-sm"
             href={href} onClick={onClick}>{text}</a>
         </>
     )
